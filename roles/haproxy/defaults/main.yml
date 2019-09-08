@@ -1,0 +1,7 @@
+---
+# defaults file for haproxy
+haproxy_backend_servers: 
+  - name: app1
+    address: 13.127.108.104:80
+  - name: app2
+    address: 13.127.108.104:8080
