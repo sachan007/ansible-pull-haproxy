@@ -79,6 +79,6 @@ backend static
 #---------------------------------------------------------------------
 backend app
     balance     roundrobin
-{% for backend in haproxy_backend_servers %}
-    server {{ backend.name }} {{ backend.address }} check
-{% endfor %}
+#{% for backend in haproxy_backend_servers %}
+#    server {{ backend.name }} {{ backend.address }} check
+#{% endfor %}
