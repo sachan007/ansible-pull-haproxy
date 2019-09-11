@@ -74,7 +74,8 @@ backend static
     balance     roundrobin
     server      static 127.0.0.1:4331 check
 
-listen  stats   192.168.10.10:1936
+listen  stats
+        bind :9000
         mode            http
         log             global
 
