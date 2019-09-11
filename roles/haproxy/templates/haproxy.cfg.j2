@@ -75,7 +75,7 @@ backend static
     server      static 127.0.0.1:4331 check
 
 listen  stats
-        bind :9000
+        bind *:9000
         mode            http
         log             global
 
