@@ -60,8 +60,8 @@ defaults
 #---------------------------------------------------------------------
 # main frontend which proxys to the backends
 #---------------------------------------------------------------------
-frontend  main *:5000
-    default_backend             app
+frontend  frontend *:5000
+    default_backend             Backend
 
 listen  stats
         bind *:9000
@@ -86,7 +86,7 @@ listen  stats
 #---------------------------------------------------------------------
 # round robin balancing between the various backends
 #---------------------------------------------------------------------
-backend app
+backend Backend
     balance     roundrobin
 #{% for backend in haproxy_backend_servers %}
 #    server {{ backend.name }} {{ backend.address }} check
