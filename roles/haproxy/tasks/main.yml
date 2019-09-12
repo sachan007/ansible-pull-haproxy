@@ -10,6 +10,13 @@
     validate: haproxy -f %s -c -q
   notify: restart haproxy
 
+- name: Copy HAProxy configuration file for syslogs.
+  template:
+    src: haproxy.conf.j2
+    dest: /etc/rsyslog.d/haproxy.conf
+    mode: 0644
+  notify: restart rsyslog
+  
 - name: To make it started and enabled on boot.
   service: name=haproxy state=started enabled=yes
 
